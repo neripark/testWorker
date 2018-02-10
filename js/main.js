@@ -13,11 +13,11 @@ btn.addEventListener('click', function(){
   //数字かどうかチェック
   if (parseInt(val)) {
     //複数渡したい場合は配列形式
-    worker.postMessage([inputText.value, '素数計算の開始']);
+    worker.postMessage([inputText.value, '倍数算出処理の開始']);
   }
 });
 
 //workerからメッセージが返ってきたら実行する
 worker.addEventListener('message', function(e){
-  console.log(`response：${e.data}`);
+  console.log(`response：${e.data.toString()}`);
 });
